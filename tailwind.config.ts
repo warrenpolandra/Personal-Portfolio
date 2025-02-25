@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
   content: [
@@ -9,6 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: colors.purple,
+        secondary: colors.pink,
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
