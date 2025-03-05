@@ -6,16 +6,35 @@ import { filterItems, projectsItems } from "@/data";
 import { motion, useInView } from "framer-motion";
 
 const ProjectSection = () => {
-  const [tag, setTag] = useState("All");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const BATCH_SIZE = 6;
+  const [tag, setTag] = useState("All");
+  const [projectCount, setProjectCount] = useState(6);
+  const [batchCount, setBatchCount] = useState(1);
 
   const handleTagChange = (newTag: string) => {
     setTag(newTag);
+    setProjectCount(6);
   };
-  const filteredProjects = projectsItems.filter((project) =>
+
+  const handleLoadMore = () => {
+    setBatchCount(batchCount + 1);
+    setProjectCount((prev) => prev + BATCH_SIZE);
+  };
+
+  const handleSeeLess = () => {
+    setProjectCount(6);
+  };
+
+  const totalFilteredProjects = projectsItems.filter((project) =>
     project.tag.includes(tag)
-  );
+  ).length;
+
+  const isInView = useInView(ref, { once: true });
+
+  const filteredProjects = projectsItems
+    .filter((project) => project.tag.includes(tag))
+    .slice(0, projectCount);
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -23,8 +42,8 @@ const ProjectSection = () => {
   };
 
   return (
-    <section>
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-4">
+    <section id="projects">
+      <h2 className="text-center text-4xl font-bold text-white my-4">
         My Projects
       </h2>
       <div className="text-white flex flex-row flex-wrap justify-center items-center gap-2 py-6">
@@ -37,9 +56,11 @@ const ProjectSection = () => {
           />
         ))}
       </div>
-      <ul
+      <motion.ul
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        key={tag}
         ref={ref}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+        className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12"
       >
         {filteredProjects.map((project, index) => (
           <motion.li
@@ -47,7 +68,7 @@ const ProjectSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
+            transition={{ duration: 0.3, delay: (index % BATCH_SIZE) * 0.4 }}
           >
             <ProjectCard
               title={project.title}
@@ -58,7 +79,22 @@ const ProjectSection = () => {
             />
           </motion.li>
         ))}
-      </ul>
+      </motion.ul>
+      {(projectCount < totalFilteredProjects ||
+        (projectCount > 6 && totalFilteredProjects > 6)) && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={
+              projectCount < totalFilteredProjects
+                ? handleLoadMore
+                : handleSeeLess
+            }
+            className="px-6 py-2 text-white text-xl rounded-xl my-8 bg-primary-500 hover:bg-primary-600"
+          >
+            {projectCount < totalFilteredProjects ? "Load More" : "See Less"}
+          </button>
+        </div>
+      )}
     </section>
   );
 };

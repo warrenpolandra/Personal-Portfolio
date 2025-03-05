@@ -1,23 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import GithubIcon from "../public/images/icons/github-icon.svg";
-import LinkedInIcon from "../public/images/icons/linkedin-icon.svg";
 import Link from "next/link";
-import Image from "next/image";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
-      email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement)
-        ?.value,
-      subject: (
-        e.currentTarget.elements.namedItem("subject") as HTMLInputElement
-      )?.value,
-      message: (
-        e.currentTarget.elements.namedItem("message") as HTMLInputElement
-      )?.value,
+      email: e.currentTarget.email.value,
+      subject: e.currentTarget.subject.value,
+      message: e.currentTarget.message.value,
     };
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
@@ -39,7 +32,10 @@ const EmailSection = () => {
   };
 
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-16 py-24 gap-4 relative">
+    <section
+      id="contact"
+      className="grid md:grid-cols-2 py-12 gap-4 mt-8 relative border border-t-[#33353F] border-b-transparent border-l-transparent border-r-transparent"
+    >
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect!
@@ -49,11 +45,14 @@ const EmailSection = () => {
           me by sending an email. I will try my best to reply to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="">
-            <Image src={GithubIcon} alt="Github" />
+          <Link href="https://github.com/warrenpolandra">
+            <FaGithub size={40} />
           </Link>
-          <Link href="">
-            <Image src={LinkedInIcon} alt="LinkedIn" />
+          <Link href="https://www.linkedin.com/in/warren-gerald-polandra-a21b07206/">
+            <FaLinkedin size={40} />
+          </Link>
+          <Link href="https://www.instagram.com/warren_polandra/">
+            <FaInstagram size={40} />
           </Link>
         </div>
       </div>
@@ -80,7 +79,7 @@ const EmailSection = () => {
               htmlFor="subject"
               className="text-white block text-sm mb-2 font-medium"
             >
-              Email Subject
+              Subject
             </label>
             <input
               name="subject"
