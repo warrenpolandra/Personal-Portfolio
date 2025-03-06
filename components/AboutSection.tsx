@@ -2,8 +2,9 @@
 import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import { tabItems } from "@/data";
 import { motion } from "framer-motion";
+import Skills from "./Skills";
+import CertificateCard from "./CertificateCard";
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -67,17 +68,21 @@ const AboutSection = () => {
               active={tab === "certifications"}
             >
               {" "}
-              Certification{" "}
+              Certifications{" "}
             </TabButton>
           </div>
-          <div className="mt-8">
-            <ul className="list-disc pl-2">
-              {tabItems
-                .find((t) => t.id === tab)
-                ?.content.map((contentItem, index) => (
-                  <li key={index}>{contentItem}</li>
-                ))}
-            </ul>
+          <div className="mt-4 md:mt-8">
+            {tab === "skills" && <Skills />}
+            {tab === "certifications" && <CertificateCard />}
+            {/* <div className="mt-8">
+              <ul className="list-disc pl-2">
+                {tabItems
+                  .find((t) => t.id === tab)
+                  ?.content.map((contentItem, index) => (
+                    <li key={index}>{contentItem}</li>
+                  ))}
+              </ul>
+            </div> */}
           </div>
         </motion.div>
       </div>

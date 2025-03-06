@@ -13,22 +13,64 @@ export const navItems = [
   },
 ];
 
-export const tabItems = [
+export const skillsItems = [
   {
-    title: "Skills",
-    id: "skills",
-    content: ["Java", "Kotlin", "Android", "HTML", "CSS", "Javascript", "NextJS", "SpringBoot", "Android Compose" ]
+    path: "java.svg",
+    alt: "Java",
+    link: "https://www.java.com/en/"
   },
   {
-    title: "Education",
-    id: "education",
-    content: ["Sepuluh Nopember Institute of Technology"]
+    path: "spring.svg",
+    alt: "Spring",
+    link: "https://spring.io/"
   },
   {
-    title: "Certifications",
-    id: "certifications",
-    content: ["Expert Android Developer", "Intermediate Web Developer", "Fundamental Back-End Developer"]
+    path: "javascript.svg",
+    alt: "Javascript",
+    link: "https://www.javascript.com/"
   },
+  {
+    path: "tailwindcss.svg",
+    alt: "Tailwind CSS",
+    link: "https://tailwindcss.com/"
+  },
+  {
+    path: "react.svg",
+    alt: "React",
+    link: "https://react.dev/"
+  },
+  {
+    path: "nextjs.svg",
+    alt: "NextJS",
+    link: "https://nextjs.org/"
+  },
+  {
+    path: "kotlin.svg",
+    alt: "Kotlin",
+    link: "https://kotlinlang.org/"
+  },
+  {
+    path: "android.svg",
+    alt: "Android",
+    link: "https://developer.android.com/"
+  },
+  {
+    path: "jetpack-compose.svg",
+    alt: "Jetpack Compose",
+    link: "https://developer.android.com/compose"
+  },
+  {
+    path: "postgresql.svg",
+    alt: "PostgreSQL",
+    link: "https://www.postgresql.org/"
+  },
+];
+
+export const certificationItems = [
+  {
+    filePath: "expert-android.pdf",
+    imagePath: "expert-android.jpg"
+  }
 ];
 
 export const projectsItems = [

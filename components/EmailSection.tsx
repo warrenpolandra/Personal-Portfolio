@@ -42,7 +42,7 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           I&apos;m always looking forward to collaborate, feel free to contact
-          me by sending an email. I will try my best to reply to you!
+          me by sending an email. I&apos;ll try my best to reply your message!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/warrenpolandra">

@@ -34,11 +34,12 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-lg mb-6 lg:text-xl mr-10">
-            I am a fresh graduate software engineering student! I have
-            participated in various volunteering events and organization. I am
-            also Interested in new things and looking forward to work together
-            in a team to build new projects. Certified in expert Android
-            developer with Jetpack Compose and intermediate Front-End developer.
+            Hi! you can call me Warren. I&apos;m a fresh graduate software
+            engineering student, and I have participated in various volunteering
+            events and organization. I&apos;m also Interested in new things and
+            looking forward to work together in a team to build new projects.
+            I&apos;m certified in expert Android developer with Jetpack Compose
+            and intermediate Front-End developer.
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-yellow-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
