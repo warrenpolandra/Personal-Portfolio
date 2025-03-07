@@ -4,7 +4,7 @@ import Image from "next/image";
 import TabButton from "./TabButton";
 import { motion } from "framer-motion";
 import Skills from "./Skills";
-import CertificateCard from "./CertificateCard";
+import CertificateCard from "./Certifications";
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -57,13 +57,6 @@ const AboutSection = () => {
               Skills{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
@@ -74,15 +67,6 @@ const AboutSection = () => {
           <div className="mt-4 md:mt-8">
             {tab === "skills" && <Skills />}
             {tab === "certifications" && <CertificateCard />}
-            {/* <div className="mt-8">
-              <ul className="list-disc pl-2">
-                {tabItems
-                  .find((t) => t.id === tab)
-                  ?.content.map((contentItem, index) => (
-                    <li key={index}>{contentItem}</li>
-                  ))}
-              </ul>
-            </div> */}
           </div>
         </motion.div>
       </div>

@@ -6,29 +6,30 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    // TODO: Use Firebase
     e.preventDefault();
     const data = {
       email: e.currentTarget.email.value,
       subject: e.currentTarget.subject.value,
       message: e.currentTarget.message.value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
+    // const JSONdata = JSON.stringify(data);
+    // const endpoint = "/api/send";
+    // const options = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSONdata,
+    // };
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    console.log(resData);
-    if (response.status === 200) {
-      console.log("Message sent");
-      setEmailSubmitted(true);
-    }
+    // const response = await fetch(endpoint, options);
+    // const resData = await response.json();
+    // console.log(resData);
+    // if (response.status === 200) {
+    //   console.log("Message sent");
+    //   setEmailSubmitted(true);
+    // }
   };
 
   return (
@@ -45,13 +46,25 @@ const EmailSection = () => {
           me by sending an email. I&apos;ll try my best to reply your message!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/warrenpolandra">
+          <Link
+            href="https://github.com/warrenpolandra"
+            target="_blank"
+            title="Github"
+          >
             <FaGithub size={40} />
           </Link>
-          <Link href="https://www.linkedin.com/in/warren-gerald-polandra-a21b07206/">
+          <Link
+            href="https://www.linkedin.com/in/warren-gerald-polandra-a21b07206/"
+            target="_blank"
+            title="LinkedIn"
+          >
             <FaLinkedin size={40} />
           </Link>
-          <Link href="https://www.instagram.com/warren_polandra/">
+          <Link
+            href="https://www.instagram.com/warren_polandra/"
+            target="_blank"
+            title="Instagram"
+          >
             <FaInstagram size={40} />
           </Link>
         </div>

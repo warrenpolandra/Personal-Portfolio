@@ -9,7 +9,7 @@ import { motion, useInView } from "framer-motion";
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const skillVariants = {
+  const variants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
@@ -22,7 +22,7 @@ const Skills = () => {
       {skillsItems.map((skill, index) => (
         <motion.div
           key={index}
-          variants={skillVariants}
+          variants={variants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           transition={{ duration: 0.3, delay: index * 0.1 }}
