@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  basePath: "/Personal-Portfolio",
   distDir: "out",
+  output: "export",
   images: {
     unoptimized: true
   }
