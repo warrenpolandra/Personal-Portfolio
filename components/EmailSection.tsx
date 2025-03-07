@@ -1,18 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  // const [emailSubmitted, setEmailSubmitted] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     // TODO: Use Firebase
     e.preventDefault();
-    const data = {
-      email: e.currentTarget.email.value,
-      subject: e.currentTarget.subject.value,
-      message: e.currentTarget.message.value,
-    };
+    // const data = {
+    //   email: e.currentTarget.email.value,
+    //   subject: e.currentTarget.subject.value,
+    //   message: e.currentTarget.message.value,
+    // };
     // const JSONdata = JSON.stringify(data);
     // const endpoint = "/api/send";
     // const options = {
@@ -123,9 +123,9 @@ const EmailSection = () => {
           >
             Send Message
           </button>
-          {emailSubmitted && (
+          {/* {emailSubmitted && (
             <p className="text-green-500 text-sm mt-2">Email sent!</p>
-          )}
+          )} */}
         </form>
       </div>
     </section>
