@@ -26,7 +26,7 @@ const AboutSection = () => {
           className="flex justify-center sm:flex-none sm:justify-center"
         >
           <Image
-            src="/Personal-Portfolio/images/about.jpg"
+            src="./images/about.jpg"
             alt="avatar"
             width={400}
             height={400}

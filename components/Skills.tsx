@@ -29,7 +29,7 @@ const Skills = () => {
         >
           <Link href={skill.link} title={skill.alt} target="_blank">
             <Image
-              src={`/Personal-Portfolio/images/icons/${skill.path}`}
+              src={`./images/icons/${skill.path}`}
               alt={skill.alt}
               width={100}
               height={100}

@@ -24,7 +24,7 @@ const CertificateCard = () => {
             className="group"
           >
             <Link
-              href={`files/certificates/${certificates.filepath}`}
+              href={`./files/certificates/${certificates.filepath}`}
               target="_blank"
               className="relative group transition-all duration-300"
             >
