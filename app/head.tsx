@@ -1,6 +1,6 @@
 import React from "react";
 
-const head = () => {
+const Head = () => {
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,4 +11,4 @@ const head = () => {
   );
 };
 
-export default head;
+export default Head;
