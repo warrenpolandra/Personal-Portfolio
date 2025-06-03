@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Warren Gerald Polandra",
   description: "Projects, Skills, and Experiences",
+  colorScheme: "light dark",
+  themeColor: "light",
 };
 
 export default function RootLayout({
