@@ -34,12 +34,12 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-lg mb-6 lg:text-xl lg:mr-10">
-            Hi! you can call me Warren. I&apos;m a fresh graduate software
-            engineering student, and I have participated in various volunteering
-            events and organization. I&apos;m also Interested in new things and
-            looking forward to work together in a team to build new projects.
-            I&apos;m certified in expert Android developer with Jetpack Compose
-            and intermediate Front-End developer.
+            Hi! you can call me Warren. I&apos;m a Computer Science Master
+            Student at The University of Osaka, currently doing research in the
+            field of Software Enginering. I&apos;m also Interested in new things
+            and looking forward to work together in a team to build new
+            projects. I&apos;m certified in expert Android developer with
+            Jetpack Compose and intermediate Front-End developer.
           </p>
           <div>
             <button
@@ -66,7 +66,7 @@ const HeroSection = () => {
         >
           <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden rounded-full border-8 border-primary-500">
             <Image
-              src="/images/avatar.jpeg"
+              src="./images/avatar.jpeg"
               alt="Avatar"
               className="object-cover scale-125 translate-x-[-5%] translate-y-[-10%]"
               fill
