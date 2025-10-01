@@ -12,7 +12,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className="col-span-8 place-self-center text-center sm:text-left justify-self-start order-2 sm:order-1"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
@@ -62,15 +62,14 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
+          className="col-span-4 place-self-center mt-4 lg:mt-0 order-1 sm:order-2 mb-8 sm:mb-0"
         >
-          <div className="rounded-full bg-primary-500 w-[ h-[250px] lg:w-[400px] lg:h-[400px] relative">
+          <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden rounded-full border-8 border-primary-500">
             <Image
-              src="./images/avatar.png"
+              src="/images/avatar.jpeg"
               alt="Avatar"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
-              width={390}
-              height={390}
+              className="object-cover scale-125 translate-x-[-5%] translate-y-[-10%]"
+              fill
             />
           </div>
         </motion.div>

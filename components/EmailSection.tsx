@@ -50,6 +50,7 @@ const EmailSection = () => {
             href="https://github.com/warrenpolandra"
             target="_blank"
             title="Github"
+            className="text-white"
           >
             <FaGithub size={40} />
           </Link>
@@ -57,6 +58,7 @@ const EmailSection = () => {
             href="https://www.linkedin.com/in/warren-gerald-polandra-a21b07206/"
             target="_blank"
             title="LinkedIn"
+            className="text-white"
           >
             <FaLinkedin size={40} />
           </Link>
@@ -64,6 +66,7 @@ const EmailSection = () => {
             href="https://www.instagram.com/warren_polandra/"
             target="_blank"
             title="Instagram"
+            className="text-white"
           >
             <FaInstagram size={40} />
           </Link>
