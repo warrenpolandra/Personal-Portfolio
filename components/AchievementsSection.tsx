@@ -1,5 +1,5 @@
 "use client";
-import { achievementsItems } from "@/data";
+import { achievementsItems } from "@/data/projectItems";
 import React from "react";
 import dynamic from "next/dynamic";
 

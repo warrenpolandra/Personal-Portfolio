@@ -2,8 +2,9 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { filterItems, projectsItems } from "@/data";
 import { motion, useInView } from "framer-motion";
+import { projectsItems } from "@/data/projectItems";
+import { filterItems } from "@/data/filterItems";
 
 const ProjectSection = () => {
   const ref = useRef(null);

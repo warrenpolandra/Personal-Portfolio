@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import { certificationItems } from "@/data";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
+import { certificationItems } from "@/data/certificationitems";
 
 const CertificateCard = () => {
   const ref = useRef(null);
@@ -13,7 +13,7 @@ const CertificateCard = () => {
   };
   return (
     <div ref={ref} className="overflow-hidden bg-[#181818] rounded-xl p-4">
-      <ul className="list-disc text-white list-inside">
+      <ul className="list-disc text-white list-inside space-y-2">
         {certificationItems.map((certificates, index) => (
           <motion.li
             key={index}
@@ -21,7 +21,7 @@ const CertificateCard = () => {
             initial="initial"
             animate={isInView ? "animate" : "initial"}
             transition={{ duration: 0.3, delay: index * 0.1 }}
-            className="group"
+            className="group text-sm sm:text-base"
           >
             <Link
               href={`./files/certificates/${certificates.filepath}`}

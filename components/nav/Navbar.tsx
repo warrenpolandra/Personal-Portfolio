@@ -1,10 +1,10 @@
 "use client";
-import { navItems } from "@/data";
 import Link from "next/link";
 import React, { useState } from "react";
 import { NavLink } from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { navItems } from "@/data/navItems";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
