@@ -1,7 +1,7 @@
 "use client";
-import { achievementsItems } from "@/data/projectItems";
 import React from "react";
 import dynamic from "next/dynamic";
+import { achievementsItems } from "@/data/achievementItems";
 
 const AnimatedNumbers = dynamic(
   () => {
