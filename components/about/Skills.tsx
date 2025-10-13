@@ -34,7 +34,7 @@ const Skills = () => {
         >
           <Link href={skill.link} title={skill.alt} target="_blank">
             <Image
-              src={`/images/icons/${skill.path}`}
+              src={`./images/icons/${skill.path}`}
               alt={skill.alt}
               fill
               className="object-cover hover:scale-110 transition-all duration-200 ease-out"
