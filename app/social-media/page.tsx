@@ -31,7 +31,7 @@ const SocialMediaPage = () => {
                 >
                   <div className="relative aspect-square w-[80px] md:w-[120px]">
                     <Image
-                      src={`/images/socials/${media.imgPath}`}
+                      src={`./images/socials/${media.imgPath}`}
                       alt={media.name}
                       fill
                     />
