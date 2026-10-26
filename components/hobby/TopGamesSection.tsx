@@ -24,7 +24,8 @@ const TopGamesSection = () => {
             game.description ||
               game.moneySpentUsd !== undefined ||
               game.favoriteEsportsTeam ||
-              game.favoriteSkins?.length
+              game.favoriteSkins?.length ||
+              game.favoriteWeapons?.length
           );
           const detailCount =
             Number(Boolean(game.featuredCharacter)) +
@@ -87,7 +88,13 @@ const TopGamesSection = () => {
                         {game.featuredCharacter.label}
                       </p>
                       <div className="group mt-3 flex flex-1 flex-col overflow-hidden rounded-xl border border-[#33353F]">
-                        <div className="relative min-h-64 flex-1 overflow-hidden">
+                        <div
+                          className={`relative min-h-64 flex-1 overflow-hidden ${
+                            game.featuredCharacter.portrait
+                              ? "mx-auto w-full max-w-48"
+                              : ""
+                          }`}
+                        >
                           <Image
                             src={game.featuredCharacter.image}
                             alt={`${game.featuredCharacter.name} image`}
@@ -112,16 +119,18 @@ const TopGamesSection = () => {
                           <p className="mt-2 text-[#ADB7BE]">
                             {game.description ?? "Add a short description."}
                           </p>
-                          <div className="mt-4 flex items-end justify-between gap-3 border-t border-[#33353F] pt-4">
-                            <p className="text-sm font-semibold text-primary-400">
-                              Money Spent (USD)
-                            </p>
-                            <p className="text-xl font-bold">
-                              {typeof game.moneySpentUsd === "number"
-                                ? `~${formatUsd(game.moneySpentUsd)}`
-                                : "TBD"}
-                            </p>
-                          </div>
+                          {game.moneySpentUsd !== undefined && (
+                            <div className="mt-4 flex items-end justify-between gap-3 border-t border-[#33353F] pt-4">
+                              <p className="text-sm font-semibold text-primary-400">
+                                Money Spent (USD)
+                              </p>
+                              <p className="text-xl font-bold">
+                                {typeof game.moneySpentUsd === "number"
+                                  ? `~${formatUsd(game.moneySpentUsd)}`
+                                  : "TBD"}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       )}
 
@@ -152,6 +161,35 @@ const TopGamesSection = () => {
                           </div>
                         </div>
                       )}
+
+                      {game.favoriteWeapons &&
+                        game.favoriteWeapons.length > 0 && (
+                          <div className="border-t border-[#33353F] pt-4">
+                            <p className="text-sm font-semibold text-primary-400">
+                              Favorite Weapons
+                            </p>
+                            <div className="mt-3 space-y-2">
+                              {game.favoriteWeapons.slice(0, 2).map((weapon, index) => (
+                                <div
+                                  key={`${weapon.name}-${index}`}
+                                  className="group flex items-center gap-3 rounded-lg border border-[#33353F] p-2"
+                                >
+                                  <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded">
+                                    <Image
+                                      src={weapon.image}
+                                      alt={`${weapon.name} image`}
+                                      fill
+                                      className="bg-[#121212] object-contain transition-transform duration-300 ease-out group-hover:scale-105"
+                                    />
+                                  </div>
+                                  <p className="truncate text-sm font-semibold">
+                                    {weapon.name}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                     </section>
                   )}
 
@@ -194,21 +232,21 @@ const TopGamesSection = () => {
                               ? "noopener noreferrer"
                               : undefined
                           }
-                          className="mt-4 flex items-center gap-3 border-t border-[#33353F] pt-4"
+                          className="group mt-4 flex items-center justify-start gap-4 border-t border-[#33353F] pt-4"
                         >
-                          <div className="relative h-12 w-12 shrink-0">
+                          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
                             <Image
                               src={game.favoriteEsportsTeam.image}
                               alt={`${game.favoriteEsportsTeam.name} logo`}
                               fill
-                              className="object-contain"
+                              className="object-contain transition-transform duration-300 ease-out group-hover:scale-110"
                             />
                           </div>
                           <div>
                             <p className="text-xs text-[#ADB7BE]">
                               Favorite Esports Team
                             </p>
-                            <p className="font-semibold hover:text-primary-300 hover:underline">
+                            <p className="font-semibold group-hover:text-primary-300 group-hover:underline">
                               {game.favoriteEsportsTeam.name}
                             </p>
                           </div>

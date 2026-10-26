@@ -15,8 +15,10 @@ export type TopGameItem = {
   favoriteEsportsTeam?: GameImage;
   featuredCharacter?: GameImage & {
     label: string;
+    portrait?: boolean;
   };
   favoriteSkins?: GameImage[];
+  favoriteWeapons?: GameImage[];
   currentRank?: GameImage;
   highestRank?: GameImage;
 };
@@ -28,7 +30,7 @@ export const topGameItems: TopGameItem[] = [
     logo: "./images/games/valorant/valorant.svg",
     gameUrl: "https://playvalorant.com/en-us/",
     riotId: "Menendez#Raul",
-    description: "I’ve been playing Valorant since 2020. It has brought me equal parts tears, joy, and questionable life choices. It may be free-to-play, but my sanity has been paying the price ever since.",
+    description: "Been playing this game since 2020. It has brought me equal parts tears, joy, and questionable life choices. It may be free-to-play, but my sanity has been paying the price ever since.",
     moneySpentUsd: 177,
     favoriteEsportsTeam: {
       name: "Paper Rex (PRX)",
@@ -56,8 +58,27 @@ export const topGameItems: TopGameItem[] = [
   },
   {
     rank: 2,
-    title: "Game Title",
-    logo: "./images/games/placeholders/game-logo.svg",
+    title: "Apex Legends",
+    logo: "./images/games/apex-legends/apex-legends.png",
+    description: "I started playing in 2026 when I lived in Japan, where everyone played this game. Valkyrie is the only Legend that I can use, so don't expect much from me when we play together :)",
+    featuredCharacter: {
+      label: "Most Used Legend",
+      portrait: true,
+      name: "Valkyrie",
+      image: "./images/games/apex-legends/valkryie.webp",
+    },
+    favoriteWeapons: [
+      { name: "Hemlok Burst AR", image: "./images/games/apex-legends/hemlok.png" },
+      { name: "C.A.R. SMG", image: "./images/games/apex-legends/car.png" },
+    ],
+    currentRank: {
+      name: "Gold 4",
+      image: "./images/games/apex-legends/gold-4.png",
+    },
+    highestRank: {
+      name: "Gold 4",
+      image: "./images/games/apex-legends/gold-4.png",
+    },
   },
   {
     rank: 3,
