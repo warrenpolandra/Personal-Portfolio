@@ -21,7 +21,7 @@ const AboutTab = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-row justify-start mt-8">
+      <div className="flex flex-row justify-start mt-4">
         <TabButton
           selectTab={() => handleTabChange("skills")}
           active={tab === "skills"}

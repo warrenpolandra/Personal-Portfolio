@@ -7,7 +7,7 @@ const SocialMediaPage = () => {
   return (
     <main className="flex flex-col min-h-screen bg-[#121212]">
       <Navbar />
-      <div className="flex flex-col px-8 mb-4 mx-auto w-full max-w-8xl">
+      <div className="flex flex-col px-4 sm:px-8 mb-4 mx-auto w-full max-w-7xl">
         <div className="flex w-full items-center justify-center border-b-primary pt-20 lg:pt-28 pb-8">
           <h1 className="text-white text-2xl md:text-3xl font-bold text-center">
             Want to connect? Here are my social media!

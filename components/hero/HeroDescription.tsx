@@ -22,7 +22,7 @@ const HeroDescription = () => {
             1000,
             "A Software Engineer",
             1000,
-            "A Mobile Developer",
+            "An SE Researcher",
             1000,
           ]}
           wrapper="span"
@@ -32,11 +32,10 @@ const HeroDescription = () => {
       </h1>
       <p className="text-[#ADB7BE] text-lg mb-6 lg:text-xl">
         Hi! you can call me Warren. I&apos;m a Computer Science Master Student
-        at The University of Osaka, currently doing research in the field of
-        Software Enginering. I&apos;m also Interested in new things and looking
-        forward to work together in a team to build new projects. I&apos;m
-        certified in expert Android developer with Jetpack Compose and
-        intermediate Front-End developer.
+        at The University of Osaka, currently researching AI agents and
+        software ecosystems in the field of Software Engineering. I&apos;m
+        interested in building new projects and collaborating on research, and
+        I look forward to working with a team.
       </p>
       <div>
         <Link

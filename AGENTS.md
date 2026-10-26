@@ -25,7 +25,7 @@ No test suite is currently configured. Run `npm run build` after changes; it per
 - `app/social-media/page.tsx` — social-media directory page.
 - `app/globals.css` — Tailwind directives and small global styles.
 - `components/hero`, `components/nav`, `components/about`, `components/projects` — UI grouped by page section.
-- `components/EmailSection.tsx` — contact form UI; submission is deliberately a no-op at present.
+- `components/EmailSection.tsx` — contact form UI that opens the visitor's mail client with prefilled fields.
 - `data/*.ts` — content/catalog data for navigation, projects, skills, certificates, achievements, and social media. Update these arrays for content changes rather than hard-coding duplicate entries in components.
 - `public/images/` — avatar, about, project, icon, and social assets.
 - `public/files/` — downloadable CV and certificate PDFs.
@@ -45,7 +45,7 @@ No test suite is currently configured. Run `npm run build` after changes; it per
 
 `output: "export"` means the deployed site cannot rely on server-only Next.js features (SSR, server actions, dynamic route handlers, or runtime API endpoints). The existing `/api/send` route is only an empty/commented prototype and is not wired to the contact form. Do not enable a mail/API implementation without also changing the hosting/deployment approach or using a browser-compatible external service.
 
-The contact form is currently presentation-only; no backend mail service is configured. Environment files are ignored by Git; never commit API keys.
+The contact form uses a `mailto:` link, so GitHub Pages does not need a backend. It requires visitors to have a configured mail client. Environment files are ignored by Git; never commit API keys.
 
 ## Change checklist
 

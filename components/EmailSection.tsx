@@ -4,38 +4,20 @@ import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const EmailSection = () => {
-  // const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    // TODO: Use Firebase
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const data = {
-    //   email: e.currentTarget.email.value,
-    //   subject: e.currentTarget.subject.value,
-    //   message: e.currentTarget.message.value,
-    // };
-    // const JSONdata = JSON.stringify(data);
-    // const endpoint = "/api/send";
-    // const options = {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSONdata,
-    // };
 
-    // const response = await fetch(endpoint, options);
-    // const resData = await response.json();
-    // console.log(resData);
-    // if (response.status === 200) {
-    //   console.log("Message sent");
-    //   setEmailSubmitted(true);
-    // }
+    const formData = new FormData(e.currentTarget);
+    const subject = String(formData.get("subject") ?? "");
+    const message = String(formData.get("message") ?? "");
+
+    window.location.href = `mailto:warrenpolandra03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
   };
 
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 py-12 gap-4 mt-8 relative border border-t-[#33353F] border-b-transparent border-l-transparent border-r-transparent"
+      className="grid md:grid-cols-2 py-8 gap-4 mt-4 relative border border-t-[#33353F] border-b-transparent border-l-transparent border-r-transparent"
     >
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
@@ -79,22 +61,6 @@ const EmailSection = () => {
         <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
-              htmlFor="email"
-              className="text-white block text-sm mb-2 font-medium"
-            >
-              Your Email
-            </label>
-            <input
-              name="email"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              type="email"
-              id="email"
-              required
-              placeholder="your_email@domain.com"
-            />
-          </div>
-          <div className="mb-6">
-            <label
               htmlFor="subject"
               className="text-white block text-sm mb-2 font-medium"
             >
@@ -119,7 +85,8 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              maxLength={1500}
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full min-h-32 p-2.5"
               placeholder="Hi! Let's collaborate!"
             />
           </div>

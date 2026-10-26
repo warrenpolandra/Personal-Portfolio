@@ -13,13 +13,13 @@ const AboutDescription = () => {
         About Me
       </h2>
       <p className="text-sm sm:text-base lg:text-lg">
-        I&apos;m familiar with some web frameworks such as React and Next JS. I
-        have a few basic experience in Back End Development. Some of the
-        projects that I have developed were built using Node JS, GoLang, and
-        Spring Boot. I have 2.5 years of experience in Android development with
-        Jetpack Compose. I&apos;m also familiar with both Java and Kotlin in
-        Android development. In addition, I have some basic experience with
-        Flutter framework.
+        My primary interest is in Software Engineering research, with a focus
+        on AI agents and software ecosystems. I&apos;m interested in understanding
+        how intelligent agents can support software development and how
+        software ecosystems evolve through interactions between developers,
+        tools, platforms, and communities. Alongside my research, I have
+        experience building Android, web, and back-end applications using Kotlin,
+        Jetpack Compose, React, Next.js, Spring Boot, and PostgreSQL.
       </p>
     </motion.div>
   );

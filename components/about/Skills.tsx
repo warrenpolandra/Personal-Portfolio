@@ -28,7 +28,7 @@ const Skills = () => {
           transition={{ duration: 0.3, delay: index * 0.1 }}
           className={`w-[56px] sm:w-[64px] lg:w-[80px] aspect-square relative ${
             index === skillsItems.length - 1
-              ? "col-span-full sm:col-span-1 md:col-span-full justify-self-cente xl:col-span-1"
+              ? "col-span-full sm:col-span-1 md:col-span-full justify-self-center xl:col-span-1"
               : ""
           }`}
         >
