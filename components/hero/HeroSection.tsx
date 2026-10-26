@@ -3,13 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HeroDescription from "./HeroDescription";
-import Link from "next/link";
 import { GoArrowDown } from "react-icons/go";
 
 const HeroSection = () => {
   return (
     <section
-      className="flex flex-col items-center justify-end min-h-screen border-b-primary pt-16 lg:pt-20 pb-8"
+      className="flex min-h-screen min-h-[100dvh] flex-col items-center justify-end border-b-primary pt-16 pb-8 lg:pt-20"
       id="hero"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center justify-center">
@@ -36,11 +35,15 @@ const HeroSection = () => {
         transition={{ duration: 0.5 }}
         className="mx-auto mt-4 md:mt-0 text-primary-50 cursor-pointer border-2 border-light rounded-full w-[38px] h-[60px] lg:w-[50px] lg:h-[80px] flex items-center justify-center"
       >
-        <div className="animate-bounce pt-4">
-          <Link href={"#about"}>
-            <GoArrowDown className="w-8 h-8 lg:w-12 lg:h-12" />
-          </Link>
-        </div>
+        <a
+          href="#about"
+          aria-label="Go to About Me section"
+          className="flex h-full w-full items-center justify-center"
+        >
+          <div className="animate-bounce pt-4">
+            <GoArrowDown className="h-8 w-8 lg:h-12 lg:w-12" />
+          </div>
+        </a>
       </motion.div>
     </section>
   );

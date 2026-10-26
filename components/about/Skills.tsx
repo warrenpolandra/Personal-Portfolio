@@ -26,9 +26,9 @@ const Skills = () => {
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           transition={{ duration: 0.3, delay: index * 0.1 }}
-          className={`w-[56px] sm:w-[64px] lg:w-[80px] aspect-square relative ${
+          className={`flex w-[56px] flex-col items-center sm:w-[64px] lg:w-[80px] ${
             index === skillsItems.length - 1
-              ? "col-span-full sm:col-span-1 md:col-span-full justify-self-center xl:col-span-1"
+              ? "col-span-full justify-self-center sm:col-span-1 md:col-span-full xl:col-span-1"
               : ""
           }`}
         >
@@ -37,15 +37,18 @@ const Skills = () => {
             title={skill.alt}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block h-full w-full"
+            className="relative block aspect-square w-full"
           >
             <Image
               src={`./images/icons/${skill.path}`}
               alt={skill.alt}
               fill
-              className="object-cover hover:scale-110 transition-all duration-200 ease-out"
+              className="object-cover transition-all duration-200 ease-out hover:scale-110"
             />
           </Link>
+          <span className="mt-2 flex min-h-10 items-center justify-center text-center text-xs leading-tight text-[#ADB7BE]">
+            {skill.alt}
+          </span>
         </motion.div>
       ))}
     </div>

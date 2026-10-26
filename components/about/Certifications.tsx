@@ -1,39 +1,66 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { certificationItems } from "@/data/certificationitems";
 
 const CertificateCard = () => {
   const ref = useRef(null);
+  const [showAll, setShowAll] = useState(false);
   const isInView = useInView(ref, { once: true });
+  const visibleCertifications = showAll
+    ? certificationItems
+    : certificationItems.slice(0, 4);
   const variants = {
     initial: { x: -50, opacity: 0 },
     animate: { x: 0, opacity: 1 },
   };
+
   return (
-    <div ref={ref} className="overflow-hidden bg-[#181818] rounded-xl p-4">
-      <ul className="list-disc text-white list-inside space-y-2">
-        {certificationItems.map((certificates, index) => (
+    <div ref={ref}>
+      <ol className="divide-y divide-[#33353F]">
+        {visibleCertifications.map((certificate, index) => (
           <motion.li
-            key={index}
+            key={certificate.filepath}
             variants={variants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
             transition={{ duration: 0.3, delay: index * 0.1 }}
-            className="group text-sm sm:text-base"
+            className="py-5 first:pt-0"
           >
             <Link
-              href={`./files/certificates/${certificates.filepath}`}
+              href={`./files/certificates/${certificate.filepath}`}
               target="_blank"
-              className="relative group transition-all duration-300"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-4"
             >
-              {certificates.name}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="text-2xl font-bold tabular-nums text-primary-500/60">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="flex-1 pt-1 font-semibold text-white transition-colors group-hover:text-primary-300 group-hover:underline">
+                {certificate.name}
+              </span>
+              <span
+                aria-hidden="true"
+                className="pt-1 text-lg text-[#ADB7BE] transition-colors group-hover:text-primary-300"
+              >
+                ↗
+              </span>
             </Link>
           </motion.li>
         ))}
-      </ul>
+      </ol>
+      {certificationItems.length > 4 && (
+        <button
+          type="button"
+          onClick={() => setShowAll((current) => !current)}
+          className="mt-5 text-sm font-semibold text-primary-400 hover:text-primary-300 hover:underline"
+        >
+          {showAll
+            ? "Show fewer certifications"
+            : `Show ${certificationItems.length - 4} more certifications`}
+        </button>
+      )}
     </div>
   );
 };

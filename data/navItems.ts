@@ -8,6 +8,10 @@ export const navItems = [
     path: "/#education"
   },
   {
+    title: "Research",
+    path: "/#research"
+  },
+  {
     title: "Projects",
     path: "/#projects"
   },
