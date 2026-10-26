@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import Link from "next/link";
 
 const HeroDescription = () => {
   return (
@@ -38,12 +39,12 @@ const HeroDescription = () => {
         intermediate Front-End developer.
       </p>
       <div>
-        <button
-          onClick={() => (window.location.href = "#email")}
-          className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-yellow-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+        <Link
+          href="#contact"
+          className="inline-block px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-yellow-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
         >
           Contact me
-        </button>
+        </Link>
         <button
           onClick={() => window.open("./files/cv.pdf", "_blank")}
           className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-yellow-500 via-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"

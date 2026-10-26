@@ -1,7 +1,6 @@
 import Navbar from "@/components/nav/Navbar";
 import { socialMediaItems } from "@/data/socialMediaItems";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const SocialMediaPage = () => {
@@ -22,8 +21,8 @@ const SocialMediaPage = () => {
             <hr className="my-4 border-t-2 border-primary-500" />
             <div className="flex flex-row flex-wrap align-center gap-12">
               {category.mediaList.map((media, idx) => (
-                <Link
-                  href={media.link || ""}
+                <a
+                  href={media.link || undefined}
                   target={media.link ? "_blank" : undefined}
                   rel={media.link ? "noopener noreferrer" : undefined}
                   key={idx}
@@ -37,7 +36,7 @@ const SocialMediaPage = () => {
                     />
                   </div>
                   <h3 className="text-white mt-2">{media.name}</h3>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

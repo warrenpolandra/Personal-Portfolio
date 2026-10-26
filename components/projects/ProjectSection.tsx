@@ -11,7 +11,6 @@ const ProjectSection = () => {
   const BATCH_SIZE = 6;
   const [tag, setTag] = useState("All");
   const [projectCount, setProjectCount] = useState(6);
-  const [batchCount, setBatchCount] = useState(1);
 
   const handleTagChange = (newTag: string) => {
     setTag(newTag);
@@ -19,7 +18,6 @@ const ProjectSection = () => {
   };
 
   const handleLoadMore = () => {
-    setBatchCount(batchCount + 1);
     setProjectCount((prev) => prev + BATCH_SIZE);
   };
 

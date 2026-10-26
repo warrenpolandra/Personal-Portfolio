@@ -32,7 +32,13 @@ const Skills = () => {
               : ""
           }`}
         >
-          <Link href={skill.link} title={skill.alt} target="_blank">
+          <Link
+            href={skill.link}
+            title={skill.alt}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block h-full w-full"
+          >
             <Image
               src={`./images/icons/${skill.path}`}
               alt={skill.alt}

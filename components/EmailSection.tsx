@@ -49,6 +49,7 @@ const EmailSection = () => {
           <Link
             href="https://github.com/warrenpolandra"
             target="_blank"
+            rel="noopener noreferrer"
             title="Github"
             className="text-white"
           >
@@ -57,6 +58,7 @@ const EmailSection = () => {
           <Link
             href="https://www.linkedin.com/in/warren-gerald-polandra-a21b07206/"
             target="_blank"
+            rel="noopener noreferrer"
             title="LinkedIn"
             className="text-white"
           >
@@ -65,6 +67,7 @@ const EmailSection = () => {
           <Link
             href="https://www.instagram.com/warren_polandra/"
             target="_blank"
+            rel="noopener noreferrer"
             title="Instagram"
             className="text-white"
           >
