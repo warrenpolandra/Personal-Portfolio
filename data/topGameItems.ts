@@ -1,7 +1,20 @@
-type GameImage = {
+export type GameImage = {
   name: string;
   image: string;
   url?: string;
+};
+
+export type ClashOfClansDetails = {
+  townHall: GameImage & { level: string };
+  builderHall: GameImage & { level: string };
+  builderVillageImages: string[];
+  villageImage: string;
+  clanName: string;
+  clanTag: string;
+  playerTag: string;
+  clanBannerImage?: string;
+  currentLeague: GameImage;
+  highestLeague: GameImage;
 };
 
 export type TopGameItem = {
@@ -21,6 +34,7 @@ export type TopGameItem = {
   favoriteWeapons?: GameImage[];
   currentRank?: GameImage;
   highestRank?: GameImage;
+  clashOfClans?: ClashOfClansDetails;
 };
 
 export const topGameItems: TopGameItem[] = [
@@ -60,6 +74,7 @@ export const topGameItems: TopGameItem[] = [
     rank: 2,
     title: "Apex Legends",
     logo: "./images/games/apex-legends/apex-legends.png",
+    gameUrl: "https://store.steampowered.com/app/1172470/Apex_Legends/",
     description: "I started playing in 2026 when I lived in Japan, where everyone played this game. Valkyrie is the only Legend that I can use, so don't expect much from me when we play together :)",
     featuredCharacter: {
       label: "Most Used Legend",
@@ -82,7 +97,37 @@ export const topGameItems: TopGameItem[] = [
   },
   {
     rank: 3,
-    title: "Game Title",
-    logo: "./images/games/placeholders/game-logo.svg",
+    title: "Clash of Clans",
+    logo: "./images/games/clash-of-clans/coc-logo.png",
+    gameUrl: "https://supercell.com/en/games/clashofclans/",
+    clashOfClans: {
+      townHall: {
+        level: "Town Hall 16",
+        name: "Town Hall",
+        image: "./images/games/clash-of-clans/th-16.webp",
+      },
+      builderHall: {
+        level: "Builder Hall 10",
+        name: "Builder Hall",
+        image: "./images/games/clash-of-clans/bh-10.webp",
+      },
+      builderVillageImages: [
+        "./images/games/clash-of-clans/builder-village-1.PNG",
+        "./images/games/clash-of-clans/builder-village-2.PNG",
+      ],
+      villageImage: "./images/games/clash-of-clans/village.PNG",
+      clanName: "CCC",
+      clanTag: "#2RJ9RGGY9",
+      playerTag: "#2GJCJL2YU",
+      clanBannerImage: "./images/games/clash-of-clans/clan-banner.png",
+      currentLeague: {
+        name: "Dragon 29",
+        image: "./images/games/clash-of-clans/dragon-league.png",
+      },
+      highestLeague: {
+        name: "Dragon 29",
+        image: "./images/games/clash-of-clans/dragon-league.png",
+      },
+    },
   },
 ];

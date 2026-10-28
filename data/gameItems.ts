@@ -32,7 +32,7 @@ export const otherGameItems: GameItem[] = [
   },
   {
     id: "pokemon-tcgp",
-    title: "Pokémon Trading Card Game",
+    title: "Pokemon TCGP",
     image: "./images/games/pokemon-tcgp.jpg",
     gameUrl: "https://tcgpocket.pokemon.com/en-us/"
   },

@@ -3,7 +3,7 @@ import { otherGameItems } from "@/data/gameItems";
 
 const GamesSection = () => {
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-8">
+    <section className="w-full pb-12">
       <h2 className="text-2xl font-bold text-white sm:text-3xl">
         Other Games I Play
       </h2>
