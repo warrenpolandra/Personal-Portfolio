@@ -4,6 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 
 type HobbyDropdownProps = {
+  icon: string;
   title: string;
   description: string;
   children: ReactNode;
@@ -12,6 +13,7 @@ type HobbyDropdownProps = {
 };
 
 const HobbyDropdown = ({
+  icon,
   title,
   description,
   children,
@@ -28,7 +30,10 @@ const HobbyDropdown = ({
         className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-8"
       >
         <div>
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">{title}</h2>
+          <h2 className="flex items-center gap-1.5 text-2xl font-bold text-white sm:text-3xl">
+            <span aria-hidden="true">{icon}</span>
+            {title}
+          </h2>
           <p className="mt-1 text-sm text-[#ADB7BE] sm:text-base">
             {description}
           </p>

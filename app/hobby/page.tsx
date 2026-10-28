@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import GamesSection from "@/components/hobby/GamesSection";
@@ -35,6 +36,7 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <HobbyDropdown
+            icon="🎮"
             title="Gaming"
             description="A glimpse of the games I enjoy in my free time."
             isOpen={openHobby === "gaming"}
@@ -50,10 +52,41 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <HobbyDropdown
-            title="Hobby 2"
-            description="More hobbies coming soon."
+            icon="😴"
+            title="Sleeping"
+            description="Is sleeping also a hobby?"
             isOpen={openHobby === "hobby-2"}
             onToggle={() => toggleHobby("hobby-2")}
+          >
+            <div className="pb-6">
+              <div className="relative mx-auto h-64 w-full max-w-md overflow-hidden rounded-xl">
+                <Image
+                  src="./images/hobbies/sleeping.png"
+                  alt="Sleeping"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="mx-auto mt-5 max-w-2xl text-center text-[#ADB7BE]">
+                Yes, I do sleep a lot when I have the time. After a busy week, I
+                can sleep up to 12 hours on weekends. Albert Einstein sleeps 10
+                hours every night and he has an IQ of 160. Naturally, I take this
+                as proof that more sleep equals more brainpower.
+              </p>
+            </div>
+          </HobbyDropdown>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <HobbyDropdown
+            icon="🍖"
+            title="Eating lots of food"
+            description="More food adventures coming soon."
+            isOpen={openHobby === "eating"}
+            onToggle={() => toggleHobby("eating")}
           >
             <p className="pb-6 text-[#ADB7BE]">Content coming soon.</p>
           </HobbyDropdown>
