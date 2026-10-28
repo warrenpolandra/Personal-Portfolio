@@ -59,12 +59,12 @@ const HobbyPage = () => {
             onToggle={() => toggleHobby("hobby-2")}
           >
             <div className="pb-6">
-              <div className="relative mx-auto h-64 w-full max-w-md overflow-hidden rounded-xl">
+              <div className="group relative mx-auto h-64 w-full max-w-md overflow-hidden rounded-xl">
                 <Image
                   src="./images/hobbies/sleeping.png"
                   alt="Sleeping"
                   fill
-                  className="object-contain"
+                  className="object-contain transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
               <p className="mx-auto mt-5 max-w-2xl text-center text-[#ADB7BE]">
