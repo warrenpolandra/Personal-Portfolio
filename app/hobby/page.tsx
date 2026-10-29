@@ -36,6 +36,7 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <HobbyDropdown
+            id="gaming"
             icon="🎮"
             title="Gaming"
             description="A glimpse of the games I enjoy in my free time."
@@ -52,6 +53,7 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <HobbyDropdown
+            id="sleeping"
             icon="😴"
             title="Sleeping"
             description="Is sleeping also a hobby?"
@@ -82,6 +84,7 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <HobbyDropdown
+            id="eating"
             icon="🍖"
             title="Eating lots of food"
             description="More food adventures coming soon."

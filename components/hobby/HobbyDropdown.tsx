@@ -4,6 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 
 type HobbyDropdownProps = {
+  id: string;
   icon: string;
   title: string;
   description: string;
@@ -13,6 +14,7 @@ type HobbyDropdownProps = {
 };
 
 const HobbyDropdown = ({
+  id,
   icon,
   title,
   description,
@@ -20,12 +22,28 @@ const HobbyDropdown = ({
   isOpen,
   onToggle,
 }: HobbyDropdownProps) => {
+  const handleToggle = () => {
+    onToggle();
+    window.history.pushState(null, "", `#${id}`);
+    window.setTimeout(() => {
+      const dropdown = document.getElementById(id);
+      if (!dropdown) return;
+
+      window.scrollTo({
+        top: window.scrollY + dropdown.getBoundingClientRect().top - 96,
+        behavior: "smooth",
+      });
+    }, 250);
+  };
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[#33353F] bg-[#181818]">
+    <section
+      id={id}
+      className="overflow-hidden rounded-2xl border border-[#33353F] bg-[#181818]"
+    >
       <button
         type="button"
-        onClick={onToggle}
+        onClick={handleToggle}
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-8"
       >
