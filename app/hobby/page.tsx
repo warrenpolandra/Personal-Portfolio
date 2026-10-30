@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
+import FoodSection from "@/components/hobby/FoodSection";
 import GamesSection from "@/components/hobby/GamesSection";
 import HobbyDropdown from "@/components/hobby/HobbyDropdown";
 import TopGamesSection from "@/components/hobby/TopGamesSection";
@@ -53,12 +54,28 @@ const HobbyPage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <HobbyDropdown
+            id="eating"
+            icon="🍖"
+            title="Eating lots of food"
+            description="I live to eat, not eat to live."
+            isOpen={openHobby === "eating"}
+            onToggle={() => toggleHobby("eating")}
+          >
+            <FoodSection />
+          </HobbyDropdown>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <HobbyDropdown
             id="sleeping"
             icon="😴"
             title="Sleeping"
             description="Is sleeping also a hobby?"
-            isOpen={openHobby === "hobby-2"}
-            onToggle={() => toggleHobby("hobby-2")}
+            isOpen={openHobby === "sleeping"}
+            onToggle={() => toggleHobby("sleeping")}
           >
             <div className="pb-6">
               <div className="group relative mx-auto h-64 w-full max-w-md overflow-hidden rounded-xl">
@@ -76,22 +93,6 @@ const HobbyPage = () => {
                 as proof that more sleep equals more brainpower.
               </p>
             </div>
-          </HobbyDropdown>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <HobbyDropdown
-            id="eating"
-            icon="🍖"
-            title="Eating lots of food"
-            description="More food adventures coming soon."
-            isOpen={openHobby === "eating"}
-            onToggle={() => toggleHobby("eating")}
-          >
-            <p className="pb-6 text-[#ADB7BE]">Content coming soon.</p>
           </HobbyDropdown>
         </motion.div>
       </div>

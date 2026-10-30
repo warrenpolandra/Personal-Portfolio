@@ -25,7 +25,10 @@ const CertificateCard = () => {
             variants={variants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition={{
+              duration: 0.3,
+              delay: showAll ? Math.max(0, index - 4) * 0.1 : index * 0.1,
+            }}
             className="py-5 first:pt-0"
           >
             <Link
