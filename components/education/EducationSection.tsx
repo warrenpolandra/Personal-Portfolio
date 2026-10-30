@@ -31,7 +31,7 @@ const EducationSection = () => {
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-stretch">
-            <div className="relative w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
+            <div className="relative aspect-square w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
               <Image
                 src="./images/education/university-of-osaka-logo.svg"
                 alt="The University of Osaka logo"
@@ -120,7 +120,7 @@ const EducationSection = () => {
         className="mx-auto mt-4 max-w-4xl rounded-2xl border border-[#33353F] bg-[#181818] p-6 sm:p-8"
       >
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-stretch">
-          <div className="relative w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
+          <div className="relative aspect-square w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
             <Image
               src="./images/education/its-logo.png"
               alt="Institut Teknologi Sepuluh Nopember logo"

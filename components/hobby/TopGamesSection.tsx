@@ -85,6 +85,7 @@ const TopGamesSection = () => {
                   <CopyableId
                     label="Player Tag"
                     value={game.clashOfClans.playerTag}
+                    className="ml-auto self-end"
                   />
                 ) : null}
               </header>

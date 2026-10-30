@@ -11,7 +11,7 @@ type CopyableIdProps = {
 const CopyableId = ({
   label,
   value,
-  className = "sm:ml-auto",
+  className = "ml-auto self-end",
 }: CopyableIdProps) => {
   const [copied, setCopied] = useState(false);
 
@@ -27,7 +27,7 @@ const CopyableId = ({
       onClick={copyValue}
       initial="rest"
       whileHover="hover"
-      className={`relative text-left text-lg text-[#ADB7BE] ${className}`}
+      className={`relative text-right text-lg text-[#ADB7BE] ${className}`}
       title={`Copy ${label}`}
     >
       <AnimatePresence>

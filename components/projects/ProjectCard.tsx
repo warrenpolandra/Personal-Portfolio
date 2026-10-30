@@ -25,7 +25,7 @@ const ProjectCard = ({
           backgroundPosition: "center",
         }}
       >
-        <div className="overlay flex items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-80 md:bg-opacity-0 md:opacity-0 md:group-hover:opacity-100 md:group-hover:bg-opacity-80 transition-all duration-500">
+        <div className="overlay absolute top-0 left-0 flex h-full w-full items-center justify-center bg-[#181818] bg-opacity-0 opacity-0 transition-all duration-500 group-hover:bg-opacity-80 group-hover:opacity-100">
           {githubUrl && (
             <Link
               title="Github URL"

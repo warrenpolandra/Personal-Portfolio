@@ -10,7 +10,7 @@ const GamesSection = () => {
       <p className="mt-2 text-[#ADB7BE]">
         A selection of other games I enjoy in my free time.
       </p>
-      <div className="mt-6 flex flex-wrap gap-4">
+      <div className="mt-6 flex flex-wrap justify-center gap-4 md:justify-start">
         {otherGameItems.map((game) => {
           const gameContent = (
             <>
