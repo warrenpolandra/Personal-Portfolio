@@ -43,7 +43,14 @@ const ResearchSection = () => {
         Research outputs, academic activities, and presentations.
       </motion.p>
 
-      <div className="mx-auto mt-10 max-w-3xl border-l-2 border-[#33353F] pl-8">
+      <div className="relative mx-auto mt-10 max-w-3xl pl-8">
+        <motion.div
+          aria-hidden="true"
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+          className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#33353F]"
+        />
         {sortedResearchItems.map((item, index) => {
           const isLastItem = index === sortedResearchItems.length - 1;
 

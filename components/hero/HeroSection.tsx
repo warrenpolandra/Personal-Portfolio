@@ -8,7 +8,7 @@ import { GoArrowDown } from "react-icons/go";
 const HeroSection = () => {
   return (
     <section
-      className="flex min-h-screen min-h-[100dvh] flex-col items-center justify-end border-b-primary pt-16 pb-8 lg:pt-20"
+      className="relative flex min-h-screen min-h-[100dvh] flex-col items-center justify-end border-b-primary pt-16 pb-8 lg:justify-center lg:py-0"
       id="hero"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center justify-center">
@@ -33,7 +33,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="mx-auto mt-4 md:mt-0 text-primary-50 cursor-pointer border-2 border-light rounded-full w-[38px] h-[60px] lg:w-[50px] lg:h-[80px] flex items-center justify-center"
+        className="mx-auto mt-4 flex h-[60px] w-[38px] cursor-pointer items-center justify-center rounded-full border-2 border-light text-primary-50 md:mt-0 lg:absolute lg:bottom-8 lg:left-1/2 lg:mt-0 lg:h-[80px] lg:w-[50px] lg:-translate-x-1/2"
       >
         <a
           href="#about"
