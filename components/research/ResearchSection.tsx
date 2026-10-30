@@ -1,3 +1,6 @@
+"use client";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { authorProfiles } from "@/data/authors";
 import { researchItems } from "@/data/researchItems";
 
@@ -9,25 +12,48 @@ const formatDate = (year: number, month: number) =>
   }).format(new Date(Date.UTC(year, month - 1)));
 
 const ResearchSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
   const sortedResearchItems = [...researchItems].sort(
     (a, b) => b.year - a.year || b.month - a.month
   );
+  const itemVariants = {
+    initial: { x: -40, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  };
+
   return (
-    <section id="research" className="py-8 text-white">
-      <h2 className="text-center text-2xl font-bold sm:text-4xl">
+    <section id="research" ref={ref} className="py-8 text-white">
+      <motion.h2
+        variants={itemVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.4 }}
+        className="text-center text-2xl font-bold sm:text-4xl"
+      >
         Research Activities
-      </h2>
-      <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-[#ADB7BE] sm:text-base">
+      </motion.h2>
+      <motion.p
+        variants={itemVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.4, delay: 0.1 }}
+        className="mx-auto mt-4 max-w-2xl text-center text-sm text-[#ADB7BE] sm:text-base"
+      >
         Research outputs, academic activities, and presentations.
-      </p>
+      </motion.p>
 
       <div className="mx-auto mt-10 max-w-3xl border-l-2 border-[#33353F] pl-8">
         {sortedResearchItems.map((item, index) => {
           const isLastItem = index === sortedResearchItems.length - 1;
 
           return (
-            <article
+            <motion.article
               key={`${item.type}-${item.year}-${item.month}-${item.title}`}
+              variants={itemVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.4, delay: 0.2 + index * 0.15 }}
               className={`relative ${isLastItem ? "" : "pb-10"}`}
             >
               <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-2 border-primary-500 bg-[#121212]" />
@@ -124,7 +150,7 @@ const ResearchSection = () => {
                   )}
                 </div>
               )}
-            </article>
+            </motion.article>
           );
         })}
       </div>

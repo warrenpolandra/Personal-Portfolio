@@ -1,10 +1,34 @@
+"use client";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const EducationSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const cardVariants = {
+    initial: { y: 40, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <section id="education" className="py-8 text-white">
-      <h2 className="text-center text-2xl font-bold sm:text-4xl">Education</h2>
-      <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-[#33353F] bg-[#181818] p-6 sm:p-8">
+    <section id="education" ref={ref} className="py-8 text-white">
+      <motion.h2
+        variants={cardVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.4 }}
+        className="text-center text-2xl font-bold sm:text-4xl"
+      >
+        Education
+      </motion.h2>
+      <motion.div
+        variants={cardVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.4, delay: 0.15 }}
+        className="mx-auto mt-8 max-w-4xl rounded-2xl border border-[#33353F] bg-[#181818] p-6 sm:p-8"
+      >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-stretch">
             <div className="relative w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
@@ -87,8 +111,14 @@ const EducationSection = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mx-auto mt-4 max-w-4xl rounded-2xl border border-[#33353F] bg-[#181818] p-6 sm:p-8">
+      </motion.div>
+      <motion.div
+        variants={cardVariants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.4, delay: 0.3 }}
+        className="mx-auto mt-4 max-w-4xl rounded-2xl border border-[#33353F] bg-[#181818] p-6 sm:p-8"
+      >
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-stretch">
           <div className="relative w-24 shrink-0 rounded-xl border border-[#33353F] p-2 sm:w-28">
             <Image
@@ -175,7 +205,7 @@ const EducationSection = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

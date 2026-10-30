@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { foodCategories } from "@/data/foodItems";
 
@@ -11,7 +13,14 @@ const FoodSection = () => {
 
       <div className="mt-6 space-y-8">
         {foodCategories.map((category) => (
-          <section key={category.id} aria-labelledby={`${category.id}-food-title`}>
+          <motion.section
+            key={category.id}
+            aria-labelledby={`${category.id}-food-title`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.35 }}
+          >
             <h3
               id={`${category.id}-food-title`}
               className="flex items-center gap-2 text-xl font-semibold text-primary-400 sm:text-2xl"
@@ -26,9 +35,13 @@ const FoodSection = () => {
               <span>{category.country}</span>
             </h3>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
-              {category.foods.map((food) => (
-                <article
+              {category.foods.map((food, foodIndex) => (
+                <motion.article
                   key={food.rank}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.3, delay: 0.1 + foodIndex * 0.08 }}
                   className="overflow-hidden rounded-xl border border-[#33353F] bg-[#121212]"
                 >
                   {food.image ? (
@@ -51,10 +64,10 @@ const FoodSection = () => {
                     </span>
                     <p className="font-semibold text-white">{food.name}</p>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
-          </section>
+          </motion.section>
         ))}
       </div>
     </section>
