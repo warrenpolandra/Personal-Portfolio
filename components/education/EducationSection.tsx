@@ -65,7 +65,7 @@ const EducationSection = () => {
               </a>
             </div>
           </div>
-          <p className="rounded-full border border-[#33353F] px-3 py-1 text-sm text-[#ADB7BE]">
+          <p className="self-start shrink-0 whitespace-nowrap rounded-full border border-[#33353F] px-3 py-1 text-sm text-[#ADB7BE]">
             Expected Graduation: 2027
           </p>
         </div>
