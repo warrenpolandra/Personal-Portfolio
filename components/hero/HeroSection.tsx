@@ -23,6 +23,7 @@ const HeroSection = () => {
             <Image
               src="./images/avatar.jpeg"
               alt="Avatar"
+              loading="eager"
               className="object-cover scale-125 translate-x-[-5%] translate-y-[-10%]"
               fill
             />
