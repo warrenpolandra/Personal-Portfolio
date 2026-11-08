@@ -18,8 +18,8 @@ const ResearchSection = () => {
     (a, b) => b.year - a.year || b.month - a.month
   );
   const itemVariants = {
-    initial: { x: -40, opacity: 0 },
-    animate: { x: 0, opacity: 1 },
+    initial: { scale: 0.92, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
   };
 
   return (
@@ -60,8 +60,13 @@ const ResearchSection = () => {
               variants={itemVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 0.4, delay: 0.2 + index * 0.15 }}
-              className={`relative ${isLastItem ? "" : "pb-10"}`}
+              transition={{
+                duration: 0.3,
+                delay:
+                  0.15 +
+                  (index / Math.max(sortedResearchItems.length - 1, 1)) * 0.8,
+              }}
+              className={`relative origin-left ${isLastItem ? "" : "pb-10"}`}
             >
               <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-2 border-primary-500 bg-[#121212]" />
               <p className="text-sm font-semibold text-primary-400">
@@ -121,7 +126,7 @@ const ResearchSection = () => {
                         rel="noopener noreferrer"
                         className="hover:text-primary-300 hover:underline"
                       >
-                        Paper PDF
+                        Preprint
                       </a>
                     )}
                     {item.presentationUrl && (

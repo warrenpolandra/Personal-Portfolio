@@ -54,7 +54,7 @@ export const researchItems: ResearchItem[] = [
       "yoshiki-higo",
     ],
     eventUrl: "https://conf.researchr.org/home/apsec-2026",
-    paperUrl: "./files/research/12-2026-apsec.pdf",
+    paperUrl: "https://arxiv.org/abs/2610.21421",
     publicationUrl: "",
   },
 ];
